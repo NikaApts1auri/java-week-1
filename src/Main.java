@@ -301,13 +301,6 @@ public class Main {
         //////
 
 
-
-
-
-
-
-
-
 //
 //        System.out.println(average());
 //    }
@@ -342,8 +335,6 @@ public class Main {
 //        }
 
 
-
-
         // telephone(2D arrays)
 //        char [][] telephone={{'1','2','3'},
 //                             {'4','5','6'},
@@ -358,7 +349,6 @@ public class Main {
 //        }
 
 
-
         /////////////////////// java quiz game
 
         //  questions array[]
@@ -370,7 +360,6 @@ public class Main {
         //get guess from user
         // check your guess
         //display final score
-
 
 
 //        String [] questions={"What is the main funcion of a router?",
@@ -420,9 +409,6 @@ public class Main {
 //        scanner.close();
 
 
-
-
-
         // ROCK PAPER SCISSORS GAME
 
 //        Random random=new Random();
@@ -464,120 +450,222 @@ public class Main {
 //        System.out.println("Thanks for playing!");
 
 
-
-
-                     // JAVA SLOT MACHINE
-        int balance=100;
-        int bet;
-        int payout;
-        String[] row;
-        String playAgain;
-
-
-        System.out.println("*************************");
-        System.out.println("  Welcome to Java Slot!  ");
-        System.out.println("  Symbols: 🍒 🍉 🍋 🔔 ⭐️");
-        System.out.println("*************************");
-
-        while (balance>0){
-            System.out.println("Current balance: $"+balance);
-            System.out.print("Place your bet amount: ");
-            bet=scanner.nextInt();
-            scanner.nextLine();
-
-            if (bet>balance){
-                System.out.println("INSUFFICIENT FUNDS");
-                continue;
-            } else if (bet<=0) {
-                System.out.println("Bet must be greater than 0 ");
-            }else {
-                balance-=bet;
-
-            }
-            System.out.println(" Spinning... ");
-            row=spinRow();
-            printRow(row);
-            payout= getPayout(row,bet);
-
-            if(payout>0){
-                System.out.println("You won $ "+payout);
-                balance +=payout;
-            }else {
-                System.out.println("Sorry you lost this round");
-
-            }
-            System.out.println("Do you want play again? (Y/N): ");
-            playAgain=scanner.nextLine().toUpperCase();
-
-            if(!playAgain.equals("Y")){
-                break;
-            }
-        }
-        System.out.println(" GAME OVER! Your final balance is $"+balance);
-
-
-
-
-    }
-    static String[] spinRow(){
-        String[] symbols={"🍒", "🍉", "🍋", "🔔", "⭐"};
-        String[] row= new String[3];
-        Random random = new Random();
-
-//        System.out.println(symbols[random.nextInt(symbols.length)]);// for show process, dont need in production
+        // JAVA SLOT MACHINE
+//        int balance=100;
+//        int bet;
+//        int payout;
+//        String[] row;
+//        String playAgain;
 //
-        for (int i=0;i<3;i++){
-            row[i]=symbols[random.nextInt(symbols.length)];
-        }
-//        System.out.print(row[0]+row[1]+row[2]);// for show process, dont need in production
+//
+//        System.out.println("*************************");
+//        System.out.println("  Welcome to Java Slot!  ");
+//        System.out.println("  Symbols: 🍒 🍉 🍋 🔔 ⭐️");
+//        System.out.println("*************************");
+//
+//        while (balance>0){
+//            System.out.println("Current balance: $"+balance);
+//            System.out.print("Place your bet amount: ");
+//            bet=scanner.nextInt();
+//            scanner.nextLine();
+//
+//            if (bet>balance){
+//                System.out.println("INSUFFICIENT FUNDS");
+//                continue;
+//            } else if (bet<=0) {
+//                System.out.println("Bet must be greater than 0 ");
+//            }else {
+//                balance-=bet;
+//
+//            }
+//            System.out.println(" Spinning... ");
+//            row=spinRow();
+//            printRow(row);
+//            payout= getPayout(row,bet);
+//
+//            if(payout>0){
+//                System.out.println("You won $ "+payout);
+//                balance +=payout;
+//            }else {
+//                System.out.println("Sorry you lost this round");
+//
+//            }
+//            System.out.println("Do you want play again? (Y/N): ");
+//            playAgain=scanner.nextLine().toUpperCase();
+//
+//            if(!playAgain.equals("Y")){
+//                break;
+//            }
+//        }
+//        System.out.println(" GAME OVER! Your final balance is $"+balance);
+//
+//
+//
+//
+//    }
+//    static String[] spinRow(){
+//        String[] symbols={"🍒", "🍉", "🍋", "🔔", "⭐"};
+//        String[] row= new String[3];
+//        Random random = new Random();
+//
+////        System.out.println(symbols[random.nextInt(symbols.length)]);// for show process, dont need in production
+////
+//        for (int i=0;i<3;i++){
+//            row[i]=symbols[random.nextInt(symbols.length)];
+//        }
+////        System.out.print(row[0]+row[1]+row[2]);// for show process, dont need in production
+//
+//        return row;
+//    }
+//    static  void printRow(String[] row){
+//        System.out.println("****************");
+//        System.out.println(" "+String.join(" | ", row));
+//        System.out.println("****************");
+//    }
+//    static int getPayout(String[]row,int bet ){
+//
+//       if(row[0].equals(row[1])&&row[1].equals(row[2])){
+//           return switch ((row[0])){
+//
+//               case "🍒"-> bet*3;
+//               case "🍉"-> bet*4;
+//               case "🍋"-> bet*5;
+//               case "🔔"-> bet*10;
+//               case "⭐"-> bet*20;
+//               default -> 0;
+//           };
+//       }
+//        else if(row[0].equals(row[1])){
+//            return switch ((row[0])){
+//
+//                case "🍒"-> bet*2;
+//                case "🍉"-> bet*3;
+//                case "🍋"-> bet*4;
+//                case "🔔"-> bet*5;
+//                case "⭐"-> bet*10;
+//                default -> 0;
+//            };
+//        }
+//       else if(row[1].equals(row[2])){
+//           return switch ((row[0])){
+//
+//               case "🍒"-> bet*2;
+//               case "🍉"-> bet*3;
+//               case "🍋"-> bet*4;
+//               case "🔔"-> bet*5;
+//               case "⭐"-> bet*10;
+//               default -> 0;
+//           };
+//       }
+//
+//     return 0;
+//    }
 
-        return row;
+        ////   ===== CINEMA =====
+        ///
+        /// 1. Show Movies
+        /// 2. Buy Ticket
+        /// 3. Show My Tickets
+        /// 4. Exit
+        ///
+        /// Choose option:
+// როადმაპ
+// movies array[]
+//// prices array[]
+//
+//// declare variables
+//// balance / totalSpent / selectedMovie / tickets
+//
+//// welcome message
+//
+//// main menu loop
+//
+//// display movies
+//
+//// get user choice
+//
+//// check selected movie
+//
+//// get number of tickets
+//
+//// validate ticket amount
+//
+//// calculate total price
+//
+//// update purchased tickets
+//
+//// display booking information
+//
+//// ask user if they want to continue
+//
+//// display final summary
+
+
+
+//        String[] movies={"1. Avatar","2. Batman","3. Interstellar","4. Minecraft"};
+//        int[]prices={15,12,14,10};
+//        int balance=50;
+//        int totalSpent;
+//        int selectedMovie;
+//        int ticketCount;
+//        String bookingHistory;
+//
+//
+//        System.out.println("Your balance is: "+balance);
+//
+//
+//      for(int i=0;i<movies.length;i++){
+//          System.out.println(movies[i]+" $ "+prices[i]);
+//      }
+//
+//        System.out.println("   Choose Movie! ");
+//        selectedMovie=scanner.nextInt();
+//
+//       if(selectedMovie>movies.length||selectedMovie<=0){
+//           System.out.println("Invalid Number");
+//          return;
+//
+//       }else {
+//           System.out.println(movies[selectedMovie-1]);
+//       }
+//
+//
+//        System.out.println("How many tickets?");
+//        ticketCount=scanner.nextInt();
+//        if(ticketCount<=0){
+//            System.out.println("  Invalid Number, ticket count must be greather than 0 !!");
+//            return;
+//        }
+//        totalSpent=ticketCount*prices[selectedMovie-1];
+//
+//        if(totalSpent>balance){
+//            System.out.println("Invalid Checkout!!, Your balance is: $"+balance+" and your total spent is : $"+totalSpent);
+//            return;
+//        }else{
+//            System.out.println("Total Spent: $"+totalSpent);
+//            balance-=totalSpent;
+//        }
+//         bookingHistory =
+//                "Movie: " + movies[selectedMovie - 1] +
+//                        "\nTickets: " + ticketCount +
+//                        "\nPrice per ticket: $" + prices[selectedMovie - 1] +
+//                        "\nTotal: $" + totalSpent +
+//                        "\nRemaining balance: $" + balance;
+//
+//        System.out.println("\n===== BOOKING INFORMATION =====");
+//        System.out.println(bookingHistory);
+//        System.out.println("===== ===== ===== =====");
+//
+//        System.out.println("Thank You for Guest ! ");
+
+
+
+
+
+
+
+
+
+
     }
-    static  void printRow(String[] row){
-        System.out.println("****************");
-        System.out.println(" "+String.join(" | ", row));
-        System.out.println("****************");
-    }
-    static int getPayout(String[]row,int bet ){
-
-       if(row[0].equals(row[1])&&row[1].equals(row[2])){
-           return switch ((row[0])){
-
-               case "🍒"-> bet*3;
-               case "🍉"-> bet*4;
-               case "🍋"-> bet*5;
-               case "🔔"-> bet*10;
-               case "⭐"-> bet*20;
-               default -> 0;
-           };
-       }
-        else if(row[0].equals(row[1])){
-            return switch ((row[0])){
-
-                case "🍒"-> bet*2;
-                case "🍉"-> bet*3;
-                case "🍋"-> bet*4;
-                case "🔔"-> bet*5;
-                case "⭐"-> bet*10;
-                default -> 0;
-            };
-        }
-       else if(row[1].equals(row[2])){
-           return switch ((row[0])){
-
-               case "🍒"-> bet*2;
-               case "🍉"-> bet*3;
-               case "🍋"-> bet*4;
-               case "🔔"-> bet*5;
-               case "⭐"-> bet*10;
-               default -> 0;
-           };
-       }
-
-     return 0;
-    }
-
-
-
-
 }
